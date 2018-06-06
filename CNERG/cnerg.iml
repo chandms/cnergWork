@@ -52,5 +52,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jsoup-1.11.3" level="project" />
+    <orderEntry type="library" name="jython-installer-2.7.0" level="project" />
+    <orderEntry type="library" name="bin" level="project" />
   </component>
 </module>
