@@ -23,7 +23,7 @@
       <file leaf-file-name="Serv.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Serv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="1755">
               <caret line="120" column="102" selection-start-line="120" selection-start-column="102" selection-end-line="120" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -258,7 +258,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" weight="0.32843137" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3283208" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3283208" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
@@ -700,7 +700,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Serv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="1755">
           <caret line="120" column="102" selection-start-line="120" selection-start-column="102" selection-end-line="120" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
