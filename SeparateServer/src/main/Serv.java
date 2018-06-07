@@ -56,6 +56,7 @@ public class Serv {
             server.createContext("/myip",new getOwnIP());
             server.createContext("/sip",new listIp());
             server.createContext("/mpdList",new getMpdList(Destination));
+            server.createContext("/mpdFile",new uploadMpdFile(Destination));
             server.setExecutor(null); // creates a default executor
             server.start();
 
@@ -89,7 +90,7 @@ public class Serv {
         public void handle(HttpExchange httpExchange) throws IOException {
               ArrayList <String > mpdList = new ArrayList<String>();
             try {
-                mpdList=Utils.getVideoUrls(Destination+"video.mpd");
+                mpdList=Utils.getVideoUrls(Destination+"factory-I-720p.mpd");
             } catch (SAXException e) {
                 e.printStackTrace();
             } catch (ParserConfigurationException e) {
@@ -107,6 +108,32 @@ public class Serv {
         }
 
 
+    }
+    static class uploadMpdFile implements HttpHandler{
+        String Destination;
+        public uploadMpdFile(String dest)
+        {
+            Destination=dest;
+        }
+        @Override
+        public void handle(HttpExchange httpExchange) throws IOException {
+            StringBuilder sb = new StringBuilder();
+            try (BufferedReader br = new BufferedReader(new FileReader(Destination+"factory-I-720p.mpd"))){
+                String sCurrentLine;
+                while ((sCurrentLine = br.readLine()) != null) {
+                    sb.append(sCurrentLine);
+                }
+
+            }
+
+            String f= sb.toString();
+            httpExchange.sendResponseHeaders(200, f.length());
+            OutputStream os = httpExchange.getResponseBody();
+            os.write(f.getBytes());
+            os.close();
+
+
+        }
     }
     static class listIp implements HttpHandler{
         @Override

@@ -28,7 +28,7 @@ public class SecondDecode {
 
         try {
 
-            ProcessBuilder pb= new ProcessBuilder("/home/viscous/Desktop/SvcP2PStream/jsvm_9.19.5/bin/H264AVCDecoderLibTestStatic", converted,decoded);
+            ProcessBuilder pb= new ProcessBuilder("/home/viscous/Desktop/Project/H264AVCDecoderLibTestStatic", converted,decoded);
             pb.directory(new File(Destination));
 
             Process p = pb.start();
@@ -51,7 +51,7 @@ public class SecondDecode {
                 System.out.println(s);
             }
 
-            System.exit(0);
+            //System.exit(0);
         }
         catch (IOException e) {
             System.out.println("exception happened - here's what I know: ");

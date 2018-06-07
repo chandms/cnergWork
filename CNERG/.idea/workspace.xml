@@ -20,8 +20,8 @@
       <file leaf-file-name="Change.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Change.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+            <state relative-caret-position="330">
+              <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -32,8 +32,21 @@
       <file leaf-file-name="VideoChange.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="610" column="45" selection-start-line="610" selection-start-column="45" selection-end-line="610" selection-end-column="45" />
+            <state relative-caret-position="325">
+              <caret line="757" column="44" selection-start-line="757" selection-start-column="44" selection-end-line="757" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#20970#20978#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UtilsClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/UtilsClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-638">
+              <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,7 +57,7 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="30">
               <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -56,8 +69,8 @@
       <file leaf-file-name="Decode.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+            <state relative-caret-position="59">
+              <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,8 +81,8 @@
       <file leaf-file-name="SecondDecode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="732">
-              <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+            <state relative-caret-position="450">
+              <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -91,33 +104,33 @@
       <find>check</find>
       <find>myid</find>
       <find>getco</find>
-      <find>I got</find>
+      <find />
       <find>i</find>
       <find>Server.</find>
       <find>Client.</find>
       <find>Hey</find>
       <find>getList</find>
-      <find>my flag</find>
-      <find>still wa</find>
+      <find />
+      <find />
       <find>getCo</find>
       <find>the</find>
       <find>Test</find>
-      <find>client is</find>
+      <find />
       <find>coClientList</find>
       <find>cur_port</find>
       <find>Discover</find>
       <find>ther</find>
       <find>newC</find>
       <find>ServerF</find>
-      <find>I got one file</find>
-      <find>waiting fo</find>
-      <find>connection failed</find>
+      <find />
+      <find />
+      <find />
       <find>getC</find>
-      <find>my flag =1</find>
+      <find />
       <find>no</find>
       <find>Thread.sl</find>
       <find>tota</find>
-      <find>I got</find>
+      <find>system.exit</find>
     </findStrings>
     <replaceStrings>
       <replace>8900</replace>
@@ -167,9 +180,10 @@
         <option value="$PROJECT_DIR$/src/main/Change.java" />
         <option value="$PROJECT_DIR$/src/main/Player.java" />
         <option value="$PROJECT_DIR$/src/main/newClient.java" />
+        <option value="$PROJECT_DIR$/src/main/UtilsClient.java" />
         <option value="$PROJECT_DIR$/src/main/VideoChange.java" />
-        <option value="$PROJECT_DIR$/src/main/Decode.java" />
         <option value="$PROJECT_DIR$/src/main/SecondDecode.java" />
+        <option value="$PROJECT_DIR$/src/main/Decode.java" />
       </list>
     </option>
   </component>
@@ -189,8 +203,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,11 +237,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../SvcP2PStream" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SeparateServer" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -318,7 +332,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="7" />
+    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
@@ -329,7 +343,7 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.32788944" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49853587" visible="true" weight="0.36055276" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.36055276" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
@@ -362,13 +376,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/extra/ServerClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="8" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/extra/ClientClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -629,7 +636,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="30">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -639,8 +646,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Change.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="22" lean-forward="true" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+        <state relative-caret-position="330">
+          <caret line="40" column="22" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/UtilsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-638">
+          <caret line="33" column="39" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -649,18 +666,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="610" column="45" selection-start-line="610" selection-start-column="45" selection-end-line="610" selection-end-column="45" />
+        <state relative-caret-position="325">
+          <caret line="757" column="44" selection-start-line="757" selection-start-column="44" selection-end-line="757" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#20970#20978#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="732">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+        <state relative-caret-position="450">
+          <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -669,8 +687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        <state relative-caret-position="59">
+          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

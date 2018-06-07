@@ -13,10 +13,12 @@ public class Decode {
     String videoSegment;
     String converted;
     String dec;
+    String des;
 
 
     public Decode(String dest,String init,String seg,String con,String dd) throws IOException {
-        Destination = dest;
+        des=dest;
+        Destination = dest+"decode";
         initFile =init;
         videoSegment=seg;
         converted = con;
@@ -43,7 +45,7 @@ public class Decode {
                     "video_1.264.seg0-EL3.264","video_1.264.init.svc","video_1.264.seg0-L0.svc");
             pb.directory(new File("/home/viscous/Desktop/cnergWork/CNERG/src/decoded/"));*/
 
-            ProcessBuilder pb = new ProcessBuilder("python", "svc_merge.py", converted,initFile,videoSegment);
+            ProcessBuilder pb = new ProcessBuilder("python", des+"svc_merge.py", converted,initFile,des+"SpecialFolder/"+videoSegment);
             pb.directory(new File(Destination));
             Process p = pb.start();
 
