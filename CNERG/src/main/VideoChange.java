@@ -39,6 +39,7 @@ public class VideoChange {
     static ArrayList<Integer> ids;
     public static int noOfLayers;
     public static int noOfSegments;
+    public static String initFile;
 
 
     /*Parse the html cotent and get the list*/
@@ -238,7 +239,7 @@ public class VideoChange {
         return fileList;
     }
 
-    public static Map<String, Object> parseMpd(String mpdFileName)
+    public static Map<String, Object> parseMpd(String dest,String ip,String mpdFileName)
             throws ParserConfigurationException, SAXException, IOException {
         System.out.println("mpdFile "+mpdFileName);
         File inputFile = new File(mpdFileName);
@@ -284,6 +285,16 @@ public class VideoChange {
             }
         }
 
+
+        String fileURL = "http://" + ip + ":8081/get?name=" + segmentBase;
+        String saveDir = dest + "SpecialFolder/" + segmentBase;
+        try {
+            Client.downloadFile(fileURL, saveDir);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        initFile=saveDir;
+
         Map<String, Object> resultMap = new HashMap<>();
         //System.out.println(height+" "+width+" "+duration+" "+numberOfSegments+" "+idList+" "+bwList+" "+segmentBase+" "+segmentUrls);
         resultMap.put("height", height);
@@ -298,7 +309,7 @@ public class VideoChange {
     }
 
 
-    public  static void createFile(String address,String Destination) throws IOException, ParserConfigurationException, SAXException {
+    public  static void createFile(String address,String ip,String Destination) throws IOException, ParserConfigurationException, SAXException {
         URL oracle = new URL(address);
         URLConnection yc = oracle.openConnection();
         BufferedReader in = new BufferedReader(new InputStreamReader(
@@ -314,7 +325,7 @@ public class VideoChange {
         PrintWriter writer = new PrintWriter(Destination + "mympdfile.mpd", "UTF-8");
         writer.append(f);
         writer.close();
-        Map<String, Object> map = parseMpd(Destination + "mympdfile.mpd");
+        Map<String, Object> map = parseMpd(Destination,ip,Destination + "mympdfile.mpd");
         for (Map.Entry<String, Object> entry : map.entrySet())
         {
             if(entry.getKey().equals("idList"))
@@ -611,7 +622,7 @@ public class VideoChange {
         totalFileList = getList(ipAddress);
         Collections.shuffle(totalFileList);
         downloadList = new ArrayList<String>();
-        createFile("http://" + ipAddress + ":8081/mpdFile",Destination);
+        createFile("http://" + ipAddress + ":8081/mpdFile",ipAddress,Destination);
         layerList= new ArrayList< ArrayList<String>>(ids.size());
 
         for(int o=0;o<ids.size();o++)
@@ -752,20 +763,20 @@ public class VideoChange {
                     System.out.println(layerList.get(j).get(k));
                 System.out.println("-------------------------------");
             }
-            String initFile=Dest+"factory-I-720p.init.svc";
+            //initFile=Dest+"factory-III.init.svc";
 
             String converted="";
-            String temp="factory-I-720p.seg1-L0.svc";
+            String temp="factory-III.seg0-L0.svc";
             int uc=0,g=0;
             while(uc<temp.length()) {
                 if(temp.charAt(uc)=='-')
                     g++;
                 converted = converted+temp.charAt(uc);
-                if(g==3)
+                if(g==2)
                     break;
                 uc++;
             }
-            for(int j=0;j<3;j++)
+            for(int j=0;j<=3;j++)
             {
                 String gh="";
                 if(j==0)
@@ -777,7 +788,7 @@ public class VideoChange {
                 String decoded=converted+gh+".yuv";
                 String conv =converted+gh+".264";
                 try {
-                    Decode decode = new Decode(Dest,initFile,temp,conv,decoded);
+                    Decode decode = new Decode(Dest,initFile,temp,conv,decoded,j);
                     decode.decoder();
                 } catch (IOException e) {
                     e.printStackTrace();

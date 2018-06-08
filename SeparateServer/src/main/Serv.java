@@ -90,7 +90,7 @@ public class Serv {
         public void handle(HttpExchange httpExchange) throws IOException {
               ArrayList <String > mpdList = new ArrayList<String>();
             try {
-                mpdList=Utils.getVideoUrls(Destination+"factory-I-720p.mpd");
+                mpdList=Utils.getVideoUrls(Destination+"factory-III.mpd");
             } catch (SAXException e) {
                 e.printStackTrace();
             } catch (ParserConfigurationException e) {
@@ -118,7 +118,7 @@ public class Serv {
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
             StringBuilder sb = new StringBuilder();
-            try (BufferedReader br = new BufferedReader(new FileReader(Destination+"factory-I-720p.mpd"))){
+            try (BufferedReader br = new BufferedReader(new FileReader(Destination+"factory-III.mpd"))){
                 String sCurrentLine;
                 while ((sCurrentLine = br.readLine()) != null) {
                     sb.append(sCurrentLine);
