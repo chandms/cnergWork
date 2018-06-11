@@ -89,6 +89,7 @@ public class Serv {
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
               ArrayList <String > mpdList = new ArrayList<String>();
+
             try {
                 mpdList=Utils.getVideoUrls(Destination+"factory-III.mpd");
             } catch (SAXException e) {

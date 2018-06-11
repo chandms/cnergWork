@@ -40,6 +40,7 @@ public class VideoChange {
     public static int noOfLayers;
     public static int noOfSegments;
     public static String initFile;
+    static ArrayList < ArrayList<String> > segmentList;
 
 
     /*Parse the html cotent and get the list*/
@@ -433,6 +434,37 @@ public class VideoChange {
 
     }
 
+    public static void myDecoder(String Dest,int jk)
+    {
+            String temp=segmentList.get(jk).get(0);
+            String converted="";
+            int uc=0,g=0;
+            while(uc<temp.length()) {
+                if(temp.charAt(uc)=='-')
+                    g++;
+                converted = converted+temp.charAt(uc);
+                if(g==2)
+                    break;
+                uc++;
+            }
+            for(int j=0;j<=3;j++) {
+                String gh = "";
+                if (j == 0) {
+                    gh = "BL";
+                } else
+                    gh = "EL" + j;
+                String decoded = converted + gh + ".yuv";
+                String conv = converted + gh + ".264";
+                try {
+                    Decode decode = new Decode(Dest, initFile, temp, conv, decoded, j);
+                    decode.decoder();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+    }
+
 
     public static void TestIp(String ipofServer, String address) {
         URL url = null;
@@ -620,11 +652,16 @@ public class VideoChange {
         DecDestination = Destination+"SpecialFolder/";
         System.out.println(Destination);
         totalFileList = getList(ipAddress);
-        Collections.shuffle(totalFileList);
+        //Collections.shuffle(totalFileList);
         downloadList = new ArrayList<String>();
         createFile("http://" + ipAddress + ":8081/mpdFile",ipAddress,Destination);
         layerList= new ArrayList< ArrayList<String>>(ids.size());
-
+        segmentList= new ArrayList<ArrayList<String>>(noOfSegments+1);
+        for(int y=0;y<noOfSegments;y++)
+        {
+            ArrayList<String> inn= new ArrayList<String>();
+            segmentList.add(inn);
+        }
         for(int o=0;o<ids.size();o++)
         {
             ArrayList<String> ad= new ArrayList<String>();
@@ -674,6 +711,8 @@ public class VideoChange {
                 }
             }
 
+            int current = 0;
+            int curSeg=0;
             for (int j = 0; j < totalFileList.size(); j++) {
 
                 try {
@@ -681,6 +720,7 @@ public class VideoChange {
                 } catch (Exception e) {
                     // e.printStackTrace();
                 }
+                Collections.shuffle(st);
                 FileFlag = 0;
                 String fileName = totalFileList.get(j);
                 for (int jk = 0; jk < st.size(); jk++) {
@@ -718,16 +758,8 @@ public class VideoChange {
                         e.printStackTrace();
                     }
                 }
-                /*Random random = new Random();
-                int rn = random.nextInt(5000) + 500;
-                System.out.println("I am waiting randomly for " + rn + "time");
-                try {
-                    Thread.sleep(rn);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }*/
+
                 String fileNameWithOutExt = FilenameUtils.removeExtension(fileName);
-                int fg=0;
                 for(int v=0;v<ids.size();v++)
                 {
                     String ch="L"+ids.get(v);
@@ -737,62 +769,23 @@ public class VideoChange {
                         break;
                     }
                 }
-                /*String converted="";
-                String temp=fileName;
-                int uc=0;
-                while(uc<temp.length() && temp.charAt(uc)!='-') {
-                    converted = converted+temp.charAt(uc);
-                    uc++;
-                }
-
-
-
-                String decoder= fileNameWithOutExt+"-EL3.yuv";
-                converted=fileNameWithOutExt+"-EL3.264";
-                try {
-                    Decode decode = new Decode(DecDestination,"video_1.264.init.svc",fileName,converted,decoder);
-                    decode.decoder();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }*/
-
-            }
-            for(int j=0;j<layerList.size();j++)
-            {
-                for(int k=0;k<layerList.get(j).size();k++)
-                    System.out.println(layerList.get(j).get(k));
-                System.out.println("-------------------------------");
-            }
-            //initFile=Dest+"factory-III.init.svc";
-
-            String converted="";
-            String temp="factory-III.seg0-L0.svc";
-            int uc=0,g=0;
-            while(uc<temp.length()) {
-                if(temp.charAt(uc)=='-')
-                    g++;
-                converted = converted+temp.charAt(uc);
-                if(g==2)
-                    break;
-                uc++;
-            }
-            for(int j=0;j<=3;j++)
-            {
-                String gh="";
-                if(j==0)
+                for(int y=0;y<noOfSegments;y++)
                 {
-                    gh="BL";
+                    String ch="seg"+y+"-";
+                    if(fileNameWithOutExt.indexOf(ch)!=-1)
+                    {
+                        segmentList.get(y).add(fileName);
+                    }
                 }
-                else
-                    gh="EL"+j;
-                String decoded=converted+gh+".yuv";
-                String conv =converted+gh+".264";
-                try {
-                    Decode decode = new Decode(Dest,initFile,temp,conv,decoded,j);
-                    decode.decoder();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                current++;
+                if(current==noOfLayers)
+                {
+                    current=0;
+                    myDecoder(Dest,curSeg);
+                    curSeg++;
                 }
+
+
             }
 
         }

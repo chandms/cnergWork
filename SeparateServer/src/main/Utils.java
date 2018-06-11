@@ -89,16 +89,19 @@ public class Utils {
     }
     public static ArrayList<String> getVideoUrls(String mpdFileName) throws IOException, SAXException, ParserConfigurationException {
         Map <String,Object> parsedResult = parseMpd(mpdFileName);
+        int numOfSeg= (int) parsedResult.get("numberOfSegments");
+        List <Integer> ll= (List<Integer>) parsedResult.get("idList");
+        int numOfLayer = ll.size();
         ArrayList<String> videoList = new ArrayList<String>();
         for(HashMap.Entry<String,Object> entry: parsedResult.entrySet())
         {
             if(entry.getKey().equals("segmentUrls"))
             {
                 List < List<String> > listList = (List<List<String>>) entry.getValue();
-                for(int j=0;j<listList.size();j++)
+                for(int j=0;j<numOfSeg;j++)
                 {
-                    for(int k=0;k<listList.get(j).size();k++)
-                        videoList.add(listList.get(j).get(k));
+                    for(int k=0;k<numOfLayer;k++)
+                        videoList.add(listList.get(k).get(j));
                 }
             }
         }
