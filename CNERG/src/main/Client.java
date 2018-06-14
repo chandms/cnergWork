@@ -9,8 +9,9 @@ import java.net.URL;
 public class Client {
 
 
-    public static void downloadFile(String gotUrl,String saveDir) throws IOException
+    public static String downloadFile(String gotUrl,String saveDir) throws IOException
     {
+        String timeStamp="";
         URL url = new URL(gotUrl);
         HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
         int responseCode = httpCon.getResponseCode();
@@ -50,6 +51,7 @@ public class Client {
 
             int bytesRead = -1;
             byte[] buffer = new byte[4096];
+            timeStamp=new String(String.valueOf(System.currentTimeMillis()));
             while ((bytesRead = inputStream.read(buffer)) != -1) {
                 outputStream.write(buffer, 0, bytesRead);
             }
@@ -62,7 +64,7 @@ public class Client {
             System.out.println("No file to download. Server replied HTTP code: " + responseCode);
         }
         httpCon.disconnect();
-
+        return timeStamp;
 
     }
 

@@ -222,7 +222,7 @@ public class Serv {
                System.out.println("my timer "+timer+" "+key);
                timer++;
                try {
-                   Thread.sleep(2000);
+                   Thread.sleep(5000);
                } catch (InterruptedException e) {
                    e.printStackTrace();
                }

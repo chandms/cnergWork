@@ -3,11 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SeparateServer_jar</output-path>
     <root id="archive" name="SeparateServer.jar">
       <element id="module-output" name="SeparateServer" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../commons-fileupload-1.3.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../commons-io-2.2.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../http-2.2.1.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../javax.servlet.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/../jsoup-1.11.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../jars/jsoup-1.11.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../jars/commons-fileupload-1.3.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../jars/http-2.2.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../jars/commons-io-2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../../jars/javax.servlet.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
