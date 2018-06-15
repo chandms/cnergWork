@@ -32,8 +32,8 @@
       <file leaf-file-name="VideoChange.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4203">
-              <caret line="531" column="29" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="29" />
+            <state relative-caret-position="-1288">
+              <caret line="554" column="64" selection-start-line="554" selection-start-column="64" selection-end-line="554" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,7 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Thread.sl</find>
       <find>tota</find>
       <find>system.exit</find>
       <find>segmentBase</find>
@@ -115,22 +114,23 @@
       <find>getList</find>
       <find>mpdList</find>
       <find>Collections.shuff</find>
-      <find />
+      <find>waiting finished</find>
       <find>wai</find>
       <find>check</find>
       <find>sleep</find>
-      <find />
+      <find>I am reques</find>
       <find>first</find>
-      <find />
-      <find />
+      <find>I totally</find>
+      <find>i to</find>
       <find>disco</find>
       <find>current</find>
-      <find />
+      <find>is greater</find>
       <find>greater</find>
       <find>grea</find>
-      <find />
-      <find />
+      <find>Client is</find>
+      <find>I am co</find>
       <find>newCli</find>
+      <find>e.print</find>
     </findStrings>
     <replaceStrings>
       <replace>8900</replace>
@@ -193,7 +193,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="35" />
     <option name="width" value="1346" />
     <option name="height" value="688" />
@@ -346,7 +346,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
@@ -728,8 +727,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4203">
-          <caret line="531" column="29" selection-start-line="531" selection-start-column="23" selection-end-line="531" selection-end-column="29" />
+        <state relative-caret-position="-1288">
+          <caret line="554" column="64" selection-start-line="554" selection-start-column="64" selection-end-line="554" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -760,7 +759,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

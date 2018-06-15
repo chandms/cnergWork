@@ -552,7 +552,7 @@ public class VideoChange {
                 out = new DataOutputStream(socket.getOutputStream());
             } catch (IOException e) {
                 //e.printStackTrace();
-                System.out.println("Connection lost out..");
+                System.out.println("Connection lost outputstream..");
             }
             InputStream is = null;
             try {
