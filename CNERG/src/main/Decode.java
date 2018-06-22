@@ -54,10 +54,11 @@ public class Decode {
                 if(temp.charAt(uc)=='-')
                     g++;
                 normal = normal+temp.charAt(uc);
-                if(g==2)
+                if(g==1)
                     break;
                 uc++;
             }
+            System.out.println("hey normal "+normal);
             ArrayList<String> myArr= new ArrayList<String>();
             for(int j=1;j<=in;j++)
             {

@@ -6,20 +6,80 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 
-public class Client {
-    static String fName="output.seg0-L0.svc";
+public class CreditClient {
 
-    public static void main(String args[]) throws IOException {
-        String Dest=args[0];
-        String ip = args[1];
-        String filename="output.seg0-L0.svc";
-        String fileURL = "http://" + ip + ":8081/get?name=" + filename;
-        String saveDir = Dest + "/" + filename;
-        downloadFile(fileURL,saveDir);
+    public static String getResp(String file,String ip)
+    {
+        String fName=file;
+
+        URL url = null;
+        try {
+            url = new URL("http://" + ip + ":8081/allow");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        URLConnection connection = null;
+        try {
+            connection = url.openConnection();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        connection.setDoOutput(true);
+        try {
+            connection.connect();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        OutputStreamWriter out = null;
+        try {
+            out = new OutputStreamWriter(
+                    connection.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            out.write(fName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedReader in = null;
+        try {
+            in = new BufferedReader(
+                    new InputStreamReader(
+                            connection.getInputStream()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String decodedString = null;
+        String ff = "";
+        try {
+            while ((decodedString = in.readLine()) != null) {
+                ff = ff + decodedString;
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        try {
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("I got ff "+ff);
+        return ff;
     }
-    public static String downloadFile(String gotUrl,String saveDir) throws IOException
+    public static ArrayList<String> downloadFile(String gotUrl,String saveDir,String ip,String fName) throws IOException
     {
         String timeStamp="";
         URL url = new URL(gotUrl);
@@ -27,10 +87,10 @@ public class Client {
         int responseCode = httpCon.getResponseCode();
         ////////////////////////////////////////////////
 
-        //String resp=getResp(ip);
-        String resp="Yes";
+        String resp=getResp(fName,ip);
+
         System.out.println("I am getting : "+resp);
-        if(resp=="Yes") {
+        if(resp.equals("Yes")) {
 
 
             /////////////////////////////////////////////
@@ -84,7 +144,10 @@ public class Client {
         }
         else
             System.out.println("Server denied...............");
-        return timeStamp;
+        ArrayList<String> srr = new ArrayList<String>();
+        srr.add(timeStamp);
+        srr.add(resp);
+        return srr;
 
     }
 
@@ -92,3 +155,4 @@ public class Client {
 
 
 }
+

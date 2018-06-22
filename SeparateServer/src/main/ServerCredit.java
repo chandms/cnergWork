@@ -9,6 +9,7 @@ import org.apache.commons.io.IOUtils;
 import org.omg.PortableInterceptor.INACTIVE;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.xml.sax.SAXException;
+import sun.security.krb5.internal.crypto.Des;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.*;
@@ -16,10 +17,10 @@ import java.net.InetAddress;
 import java.sql.Time;
 import java.util.*;
 import java.net.InetSocketAddress;
+import java.util.concurrent.atomic.AtomicReferenceArray;
 
 
-
-public class Serv {
+public class ServerCredit {
 
     static int port=8081;
     static String s;
@@ -31,6 +32,9 @@ public class Serv {
     static HashMap <String,Thread> myThread;
     static HashMap<String,Integer> IpMap;
     static String mpdFileName="output.mpd";
+    static int maxCredit;
+    static HashMap<Integer,Integer> creditMap;
+    static Integer numOfSegment;
 
 
     public static void main(String args[]) throws IOException, ParserConfigurationException, SAXException {
@@ -39,28 +43,42 @@ public class Serv {
         HttpServer server = HttpServer.create(new InetSocketAddress(port), 0);
 
 
-            System.out.println("Server starts at " + port + "!!");
-            flag = 0;
-            arr= new HashSet<>();
-            id=1000;
-            hmap=new HashMap<String,Integer>();
-            PortMap = new HashMap<String,String>();
-            myThread = new HashMap<String,Thread>();
-            IpMap = new HashMap<String,Integer>();
+        System.out.println("Server starts at " + port + "!!");
+        flag = 0;
+        arr= new HashSet<>();
+        id=1000;
+        hmap=new HashMap<String,Integer>();
+        PortMap = new HashMap<String,String>();
+        myThread = new HashMap<String,Thread>();
+        IpMap = new HashMap<String,Integer>();
+        creditMap = new HashMap<Integer, Integer>();
+        maxCredit=0;
+        numOfSegment=0;
 
 
-            server.createContext("/test", new MyHandler());
-            server.createContext("/get", new GotHandler(Destination));
-            server.createContext("/list", new ListHandler(Destination));
-            server.createContext("/ip",new getIp());
-            server.createContext("/myip",new getOwnIP());
-            server.createContext("/sip",new listIp());
-            server.createContext("/mpdList",new getMpdList(Destination));
-            server.createContext("/mpdFile",new uploadMpdFile(Destination));
-            server.setExecutor(null); // creates a default executor
-            server.start();
+        server.createContext("/test", new MyHandler());
+        server.createContext("/get", new GotHandler(Destination));
+        server.createContext("/list", new ListHandler(Destination));
+        server.createContext("/ip",new getIp());
+        server.createContext("/myip",new getOwnIP());
+        server.createContext("/sip",new listIp());
+        server.createContext("/mpdList",new getMpdList(Destination));
+        server.createContext("/mpdFile",new uploadMpdFile(Destination));
+        server.createContext("/allow",new allowable(Destination));
+        server.setExecutor(null); // creates a default executor
+        server.start();
 
-            ArrayList <String> mm= Utils.getVideoUrls(Destination+mpdFileName);
+        Map <String,Object> res= Utils.parseMpd(Destination+mpdFileName);
+        for(HashMap.Entry<String,Object> entry: res.entrySet())
+        {
+            if(entry.getKey().equals("numberOfSegments"))
+            {
+                numOfSegment= (Integer) entry.getValue();
+            }
+        }
+        for(int j=0;j<numOfSegment;j++)
+            creditMap.put(j,0);
+
 
 
 
@@ -82,6 +100,65 @@ public class Serv {
         }
         return result;
     }
+    static class allowable implements HttpHandler{
+        String Destination;
+        public allowable(String dest){Destination=dest;}
+
+        @Override
+        public void handle(HttpExchange httpExchange) throws IOException {
+
+            InputStream is = httpExchange.getRequestBody();
+            String x= IOUtils.toString(is, "UTF-8");
+            System.out.println(x+"!!!!");
+            int pos=x.indexOf("seg");
+            System.out.println("hey pos "+pos);
+            pos=pos+3;
+
+            String segNo="";
+            int i=pos;
+            while (x.charAt(i)!='-') {
+                segNo = segNo + x.charAt(i);
+                i++;
+            }
+
+            int seg = Integer.parseInt(segNo);
+            int cc= creditMap.get(seg);
+            i=i+2;
+            String lId="";
+            while (x.charAt(i)!='.') {
+                lId = lId + x.charAt(i);
+                i++;
+            }
+            int layerId = Integer.parseInt(lId);
+
+            cc=cc+layerId+1;
+            System.out.println("check current: "+seg+" "+layerId+" "+creditMap.get(seg)+" "+maxCredit+" "+cc);
+            String resp="";
+            if(cc>maxCredit)
+                resp="No";
+            else
+                resp="Yes";
+
+            if(resp.equals("Yes"))
+            {
+                if(layerId==0)
+                    creditMap.put(seg,creditMap.get(seg)+1);
+                else if(layerId==1)
+                    creditMap.put(seg,creditMap.get(seg)+2);
+                else
+                    creditMap.put(seg,creditMap.get(seg)+3);
+            }
+
+            httpExchange.sendResponseHeaders(200,resp.length());
+            OutputStream os = httpExchange.getResponseBody();
+            os.write(resp.getBytes());
+            os.close();
+
+
+
+
+        }
+    }
     static class getMpdList implements HttpHandler{
         String Destination;
         public getMpdList(String dest)
@@ -90,8 +167,8 @@ public class Serv {
         }
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
-              ArrayList <String > mpdList = new ArrayList<String>();
-              System.out.println("I am accesed");
+            ArrayList <String > mpdList = new ArrayList<String>();
+            System.out.println("I am accesed");
 
             try {
                 mpdList=Utils.getVideoUrls(Destination+mpdFileName);
@@ -193,6 +270,8 @@ public class Serv {
             }
             if(md!="" && !IpMap.containsKey(ff.toString())) {
 
+                maxCredit++;
+                System.out.println("now maxcredit is "+maxCredit);
                 int myPort = Integer.parseInt(port);
 
                 System.out.println("Yes detecting id "+md);
@@ -214,7 +293,7 @@ public class Serv {
 
         }
     }
-   public static class Discovery implements Runnable{
+    public static class Discovery implements Runnable{
         String key;
         int timer;
         public Discovery(String st,int t)
@@ -222,29 +301,30 @@ public class Serv {
             key=st;
             timer=t;
         }
-       @Override
-       public void run() {
+        @Override
+        public void run() {
 
-           while(timer<10)
-           {
-               System.out.println("my timer "+timer+" "+key);
-               timer++;
-               try {
-                   Thread.sleep(5000);
-               } catch (InterruptedException e) {
-                   e.printStackTrace();
-               }
+            while(timer<10)
+            {
+                System.out.println("my timer "+timer+" "+key);
+                timer++;
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
-           }
-           int del=hmap.get(key);
-           String delst= Integer.toString(del);
-           hmap.remove(key);
-           String ipdel=PortMap.get(delst);
-           PortMap.remove(delst);
-           IpMap.remove(ipdel);
+            }
+            maxCredit--;
+            int del=hmap.get(key);
+            String delst= Integer.toString(del);
+            hmap.remove(key);
+            String ipdel=PortMap.get(delst);
+            PortMap.remove(delst);
+            IpMap.remove(ipdel);
 
-       }
-   }
+        }
+    }
     static class getOwnIP implements HttpHandler{
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
@@ -330,8 +410,7 @@ public class Serv {
 
     static class GotHandler implements HttpHandler{
         String Destination;
-        public GotHandler(String dest)
-        {
+        public GotHandler(String dest) throws IOException {
             Destination=dest;
         }
         @Override
@@ -339,41 +418,41 @@ public class Serv {
             Map<String,String> parms = queryToMap(t.getRequestURI().getQuery());
             s= parms.get("name");
             System.out.println(s+"!!!!");
-            String name = Destination+"Folder";
-            int g = 0;
-            File folder = new File(name);
-            for (File file : folder.listFiles()) {
-                String x = file.getName();
-                if (x.equals(s)) {
-                    Headers h = t.getResponseHeaders();
-                    String ext1 = FilenameUtils.getExtension(s);
-                    System.out.println("my Extension is "+ext1);
-                    if(ext1.equals("jpg") || ext1.equals("png") || ext1.equals("jpeg"))
-                        h.add("Content-Type", "image/"+ext1);
-                    else if(ext1.equals("txt"))
-                        h.add("Content-Type","text/plain");
-                    else if(ext1.equals("svc"))
-                        h.add("Content-Type","application/vnd.dvb.service");
-                    else
-                        h.add("Content-Type", "application/"+ext1);
+                String name = Destination + "Folder";
+                int g=0;
+                File folder = new File(name);
+                for (File file : folder.listFiles()) {
+                    String x = file.getName();
+                    if (x.equals(s)) {
+                        Headers h = t.getResponseHeaders();
+                        String ext1 = FilenameUtils.getExtension(s);
+                        System.out.println("my Extension is " + ext1);
+                        if (ext1.equals("jpg") || ext1.equals("png") || ext1.equals("jpeg"))
+                            h.add("Content-Type", "image/" + ext1);
+                        else if (ext1.equals("txt"))
+                            h.add("Content-Type", "text/plain");
+                        else if (ext1.equals("svc"))
+                            h.add("Content-Type", "application/vnd.dvb.service");
+                        else
+                            h.add("Content-Type", "application/" + ext1);
 
-                    File gfile = new File (Destination+"Folder/"+s);
-                    byte [] bytearray  = new byte [(int)gfile.length()];
-                    FileInputStream fis = new FileInputStream(gfile);
-                    BufferedInputStream bis = new BufferedInputStream(fis);
-                    bis.read(bytearray, 0, bytearray.length);
+                        File gfile = new File(Destination + "Folder/" + s);
+                        byte[] bytearray = new byte[(int) gfile.length()];
+                        FileInputStream fis = new FileInputStream(gfile);
+                        BufferedInputStream bis = new BufferedInputStream(fis);
+                        bis.read(bytearray, 0, bytearray.length);
 
-                    t.sendResponseHeaders(200, gfile.length());
+                        t.sendResponseHeaders(200, gfile.length());
 
-                    OutputStream os = t.getResponseBody();
-                    os.write(bytearray,0,bytearray.length);
+                        OutputStream os = t.getResponseBody();
+                        os.write(bytearray, 0, bytearray.length);
 
-                    os.close();
-                    g=1;
-                    break;
+                        os.close();
+                        g = 1;
+                        break;
 
+                    }
                 }
-            }
             if (g == 0){
                 String response = "No file of that name!!!!";
 

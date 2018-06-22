@@ -27,7 +27,7 @@ import java.net.NetworkInterface;
 import java.util.concurrent.Semaphore;
 
 
-public class VideoChange {
+public class CreditSystem {
 
 
     static ArrayList<String> totalFileList;
@@ -42,7 +42,8 @@ public class VideoChange {
     public static int noOfSegments;
     public static String initFile;
     static ArrayList < ArrayList<String> > segmentList;
-    public static String reqTimeStamp,fulltransfer,firstByte;
+    public static String reqTimeStamp,fulltransfer,firstByte, currentPermission;
+    public static double myCurrentCredit;
 
 
     /*Parse the html cotent and get the list*/
@@ -132,6 +133,13 @@ public class VideoChange {
                         e.printStackTrace();
                     }*/
                     System.out.println("File transfer complete " + fileName);
+                    String credit="";
+                    try {
+                        credit=in.readUTF();
+                        myCurrentCredit=myCurrentCredit+Double.parseDouble(credit);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     try {
                         fin.close();
                     } catch (IOException e) {
@@ -357,7 +365,11 @@ public class VideoChange {
         String fileURL = "http://" + ip + ":8081/get?name=" + filename;
         String saveDir = Dest + downloadFolder + "/" + filename;
         try {
-            firstByte=Client.downloadFile(fileURL, saveDir);
+            System.out.println("sadda haq "+filename);
+            ArrayList<String> arr = new ArrayList<String >();
+            arr=CreditClient.downloadFile(fileURL, saveDir,ip,filename);
+            firstByte=arr.get(0);
+            currentPermission=arr.get(1);
             downloadList.add(filename);
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -438,34 +450,34 @@ public class VideoChange {
 
     public static void myDecoder(String Dest,int jk,int r)
     {
-            String temp=segmentList.get(jk).get(0);
-            String converted="";
-            int uc=0,g=0;
-            while(uc<temp.length()) {
-                if(temp.charAt(uc)=='-')
-                    g++;
-                converted = converted+temp.charAt(uc);
-                if(g==1)
-                    break;
-                uc++;
+        String temp=segmentList.get(jk).get(0);
+        String converted="";
+        int uc=0,g=0;
+        while(uc<temp.length()) {
+            if(temp.charAt(uc)=='-')
+                g++;
+            converted = converted+temp.charAt(uc);
+            if(g==1)
+                break;
+            uc++;
+        }
+        System.out.println("hey you got me"+temp+" "+converted);
+        for(int j=0;j<=r;j++) {
+            String gh = "";
+            if (j == 0) {
+                gh = "BL";
+            } else
+                gh = "EL" + j;
+            String decoded = converted + gh + ".yuv";
+            String conv = converted + gh + ".264";
+            System.out.println("yess "+decoded+" "+conv);
+            try {
+                Decode decode = new Decode(Dest, initFile, temp, conv, decoded, j);
+                decode.decoder();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            System.out.println("hey you got me"+temp+" "+converted);
-            for(int j=0;j<=r;j++) {
-                String gh = "";
-                if (j == 0) {
-                    gh = "BL";
-                } else
-                    gh = "EL" + j;
-                String decoded = converted + gh + ".yuv";
-                String conv = converted + gh + ".264";
-                System.out.println("yess "+decoded+" "+conv);
-                try {
-                    Decode decode = new Decode(Dest, initFile, temp, conv, decoded, j);
-                    decode.decoder();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+        }
 
     }
 
@@ -537,17 +549,38 @@ public class VideoChange {
         int currentTot = 0;
 
 
+        int pos=fileName.indexOf("seg");
+        System.out.println("hey pos "+pos);
+        pos=pos+3;
+
+        String segNo="";
+        int ik=pos;
+        while (fileName.charAt(ik)!='-') {
+            segNo = segNo + fileName.charAt(ik);
+            ik++;
+        }
+
+        int seg = Integer.parseInt(segNo);
+        ik=ik+2;
+        String lId="";
+        while (fileName.charAt(ik)!='.') {
+            lId = lId + fileName.charAt(ik);
+            ik++;
+        }
+        int layerId = Integer.parseInt(lId);
+
+
         int ii = 9000;
         Socket socket = null;
 
-            int f=0;
-            try {
-                socket = new Socket(ipAddress, Integer.parseInt(myPort));
-                f++;
-            } catch (IOException e) {
-                System.out.println("Socket bondho hoe geche ");
-                //e.printStackTrace();
-            }
+        int f=0;
+        try {
+            socket = new Socket(ipAddress, Integer.parseInt(myPort));
+            f++;
+        } catch (IOException e) {
+            System.out.println("Socket bondho hoe geche ");
+            //e.printStackTrace();
+        }
         if(f!=0) {
             DataOutputStream out = null;
             try {
@@ -573,7 +606,7 @@ public class VideoChange {
             try {
                 out.writeUTF(fileName);
             } catch (IOException e) {
-               // e.printStackTrace();
+                // e.printStackTrace();
                 System.out.println("connection lost out.....");
             }
             System.out.println("Sent file name " + fileName);
@@ -596,7 +629,7 @@ public class VideoChange {
                 try {
                     fos = new FileOutputStream(Dest + copyingFolder + "/" + fileName);
                 } catch (FileNotFoundException e) {
-                   // e.printStackTrace();
+                    // e.printStackTrace();
                     System.out.println("file closed oops.....");
                 }
 
@@ -604,7 +637,7 @@ public class VideoChange {
                 try {
                     bytesRead = is.read(bytearray, 0, bytearray.length);
                 } catch (IOException e) {
-                   // e.printStackTrace();
+                    // e.printStackTrace();
                     System.out.println("could not read.....");
                 }
                 currentTot = bytesRead;
@@ -619,7 +652,14 @@ public class VideoChange {
 
                     bos.write(bytearray, 0, currentTot);
                     System.out.println("I got one file = " + fileName + "......................");
-
+                    double cr=0;
+                    if(layerId==0)
+                        cr=0.5;
+                    else if(layerId==1)
+                        cr=1;
+                    else if(layerId==2)
+                        cr=2;
+                    out.writeUTF(Double.toString(cr));
                     bos.flush();
                     bos.close();
                     fos.close();
@@ -664,10 +704,11 @@ public class VideoChange {
         systemSettings.put("http.proxyPort", "8080");
         systemSettings.put("https.proxyHost", "172.16.2.30");
         systemSettings.put("https.proxyPort", "8080");*/
-       ids=new ArrayList<Integer>();
+        ids=new ArrayList<Integer>();
 
         String Destination = args[0];
         String ipAddress = args[1];
+        myCurrentCredit=0;
         DecDestination = Destination+"SpecialFolder/";
         System.out.println(Destination);
         totalFileList = getList(ipAddress);
@@ -758,87 +799,100 @@ public class VideoChange {
                     System.out.println("I am requesting at " + reqTimeStamp);
                     fulltransfer = "";
                     firstByte = "";
-                    for (int jk = 0; jk < st.size(); jk++) {
-                        String ipr = "";
-                        String myPort = "";
-                        if (st.get(jk).indexOf("myownIP") != -1) {
-                            if ((st.get(jk).indexOf("id = " + myId) == -1)) {
-                                String f = st.get(jk);
+                    try {
+                        downloadThingy("SpecialFolder", Dest, ipAddress, fileName);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    if(currentPermission.equals("Yes")) {
+                        fulltransfer = new String(String.valueOf(System.currentTimeMillis()));
+                        FileFlag=1;
+                    }
+                    else if(currentPermission.equals("No")) {
+                        for (int jk = 0; jk < st.size(); jk++) {
+                            String ipr = "";
+                            String myPort = "";
+                            if (st.get(jk).indexOf("myownIP") != -1) {
+                                if ((st.get(jk).indexOf("id = " + myId) == -1)) {
+                                    String f = st.get(jk);
 
-                                int u = 5;
-                                while (f.charAt(u) != ' ') {
-                                    ipr = ipr + f.charAt(u);
+                                    int u = 5;
+                                    while (f.charAt(u) != ' ') {
+                                        ipr = ipr + f.charAt(u);
+                                        u++;
+                                    }
                                     u++;
-                                }
-                                u++;
-                                while (f.charAt(u) != ' ') {
-                                    myPort = myPort + f.charAt(u);
-                                    u++;
+                                    while (f.charAt(u) != ' ') {
+                                        myPort = myPort + f.charAt(u);
+                                        u++;
+                                    }
+
+                                    System.out.println("I am connecting with " + ipr + "and " + myPort);
+                                    try {
+                                        newCli(Folder, Dest, ipr, myPort, fileName);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (FileFlag == 1) {
+                                        fulltransfer = new String(String.valueOf(System.currentTimeMillis()));
+                                        break;
+                                    }
                                 }
 
-                                System.out.println("I am connecting with " + ipr + "and " + myPort);
-                                try {
-                                    newCli(Folder, Dest, ipr, myPort, fileName);
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                                if (FileFlag == 1) {
-                                    fulltransfer = new String(String.valueOf(System.currentTimeMillis()));
-                                    break;
-                                }
                             }
-
                         }
                     }
                     System.out.println("my flag =" + FileFlag);
                     int er = 0;
-                    if (FileFlag == 0) {
+                    if(fulltransfer.equals("") && FileFlag==0)
+                    {
+                        System.out.println("I have got till this.....");
+                        myDecoder(Dest,curSeg,current-1);
+                        current=0;
+                        curSeg++;
+                        er++;
+                    }
+                    else {
 
+                        if (current == 0) {
+                            tt = Long.valueOf(0);
+                            tt = Long.parseLong(fulltransfer);
+                            tt = tt + 100;
+                        } else {
+                            Long time = Long.parseLong(fulltransfer);
+                            if (time > tt && current != (noOfLayers - 1)) {
+                                System.out.println("As " + time + "is greater than " + tt);
+                                myDecoder(Dest, curSeg, current);
+                                curSeg++;
+                                current = 0;
+                                er++;
+                            }
+                        }
+                        System.out.println("I first got the byte at " + firstByte);
+                        System.out.println("I totally got the file at " + fulltransfer);
+                        String wrt = fileName + "\n" + "I am requesting at " + reqTimeStamp + "\n" + "I first got the byte at " + firstByte + "\n" + "I totally got the file at " + fulltransfer + "\n";
+                        wrt = wrt + "-------------------------------------------" + "\n";
                         try {
-                            downloadThingy("SpecialFolder", Dest, ipAddress, fileName);
-                        } catch (InterruptedException e) {
+                            fw = new FileWriter(filewr, true);
+                            fw.write(wrt);
+                            fw.close();
+                        } catch (IOException e) {
                             e.printStackTrace();
                         }
-                        fulltransfer = new String(String.valueOf(System.currentTimeMillis()));
-                    }
-                    if (current == 0) {
-                        tt = Long.valueOf(0);
-                        tt = Long.parseLong(fulltransfer);
-                        tt = tt + 100;
-                    } else {
-                        Long time = Long.parseLong(fulltransfer);
-                        if (time > tt && current != (noOfLayers - 1)) {
-                            System.out.println("As " + time + "is greater than " + tt);
-                            myDecoder(Dest,curSeg,current);
-                            curSeg++;
-                            current = 0;
-                            er++;
-                        }
-                    }
-                    System.out.println("I first got the byte at " + firstByte);
-                    System.out.println("I totally got the file at " + fulltransfer);
-                    String wrt = fileName+"\n"+"I am requesting at " + reqTimeStamp + "\n" + "I first got the byte at " + firstByte + "\n" + "I totally got the file at " + fulltransfer + "\n";
-                    wrt = wrt + "-------------------------------------------" + "\n";
-                    try {
-                        fw = new FileWriter(filewr, true);
-                        fw.write(wrt);
-                        fw.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
 
-                    String fileNameWithOutExt = FilenameUtils.removeExtension(fileName);
-                    for (int v = 0; v < ids.size(); v++) {
-                        String ch = "L" + ids.get(v);
-                        if (fileNameWithOutExt.indexOf(ch) != -1) {
-                            layerList.get(ids.get(v)).add(fileName);
-                            break;
+                        String fileNameWithOutExt = FilenameUtils.removeExtension(fileName);
+                        for (int v = 0; v < ids.size(); v++) {
+                            String ch = "L" + ids.get(v);
+                            if (fileNameWithOutExt.indexOf(ch) != -1) {
+                                layerList.get(ids.get(v)).add(fileName);
+                                break;
+                            }
                         }
-                    }
-                    for (int y = 0; y < noOfSegments; y++) {
-                        String ch = "seg" + y + "-";
-                        if (fileNameWithOutExt.indexOf(ch) != -1) {
-                            segmentList.get(y).add(fileName);
+                        for (int y = 0; y < noOfSegments; y++) {
+                            String ch = "seg" + y + "-";
+                            if (fileNameWithOutExt.indexOf(ch) != -1) {
+                                segmentList.get(y).add(fileName);
+                            }
                         }
                     }
                     if (er == 0)

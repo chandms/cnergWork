@@ -20,13 +20,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Serv.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Serv.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Serv.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="208" column="26" selection-start-line="208" selection-start-column="23" selection-end-line="208" selection-end-column="26" />
+            <state relative-caret-position="615">
+              <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerCredit.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/ServerCredit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2883#2891#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,10 +48,11 @@
       <file leaf-file-name="Utils.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-495">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="214">
+              <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4749#4757#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,8 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Desktop</find>
-      <find>client</find>
       <find>hey</find>
       <find>hmap</find>
       <find>my tim</find>
@@ -80,7 +92,6 @@
       <find>myip</find>
       <find>Utils.getvideoUr</find>
       <find>video.mpd</find>
-      <find>.mpd</find>
       <find>uploadMpdFile</find>
       <find>mpdList</find>
       <find>getMpdList</find>
@@ -89,6 +100,17 @@
       <find>DisCo</find>
       <find>my ex</find>
       <find>Dis</find>
+      <find>facto</find>
+      <find>Utils</find>
+      <find>85</find>
+      <find>numberofSe</find>
+      <find>86</find>
+      <find>.mpd</find>
+      <find>numberOfSe</find>
+      <find>Utils.getvid</find>
+      <find>maxcredit++</find>
+      <find>credit++</find>
+      <find>maxCredit</find>
     </findStrings>
     <replaceStrings>
       <replace>factory-I-720p.mpd</replace>
@@ -109,6 +131,7 @@
         <option value="$PROJECT_DIR$/src/main/CheckUtils.java" />
         <option value="$PROJECT_DIR$/src/main/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/Serv.java" />
+        <option value="$PROJECT_DIR$/src/main/ServerCredit.java" />
       </list>
     </option>
   </component>
@@ -118,10 +141,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="35" />
+    <option name="y" value="24" />
     <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="height" value="660" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -129,7 +153,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -171,6 +194,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -196,9 +220,9 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="cm" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="main.Serv" />
+      <option name="MAIN_CLASS_NAME" value="main.ServerCredit" />
       <module name="SeparateServer" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../Project/" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../output/" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -254,7 +278,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="0" y="-4" width="1600" height="904" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -264,12 +289,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50075644" side_tool="true" weight="0.32843137" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32980332" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3283208" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.3283208" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4939173" visible="true" weight="0.1625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4939173" visible="true" weight="0.13625" />
       <window_info id="Structure" order="1" sideWeight="0.5060827" side_tool="true" weight="0.25567323" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -316,13 +341,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/vidPlayer/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1770">
-          <caret line="128" column="1" selection-start-line="128" selection-start-column="1" selection-end-line="128" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/vidPlayer/Seeder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1065">
@@ -360,6 +378,7 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4749#4757#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -380,6 +399,7 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4749#4757#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -400,6 +420,7 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4749#4757#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -420,6 +441,7 @@
           <caret line="67" column="70" selection-start-line="67" selection-start-column="70" selection-end-line="67" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4749#4757#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -638,22 +660,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Utils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Serv.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-495">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="615">
+          <caret line="41" column="64" selection-start-line="41" selection-start-column="64" selection-end-line="41" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Serv.java">
+    <entry file="file://$PROJECT_DIR$/src/main/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="208" column="26" selection-start-line="208" selection-start-column="23" selection-end-line="208" selection-end-column="26" />
+        <state relative-caret-position="214">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4749#4757#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/ServerCredit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2883#2891#0" expanded="true" />
           </folding>
         </state>
       </provider>

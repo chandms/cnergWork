@@ -20,22 +20,28 @@
       <file leaf-file-name="Change.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Change.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="551" column="60" lean-forward="true" selection-start-line="551" selection-start-column="60" selection-end-line="551" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="172">
+              <caret line="240" column="48" selection-start-line="240" selection-start-column="48" selection-end-line="240" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VideoChange.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VideoChange.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1288">
-              <caret line="554" column="64" selection-start-line="554" selection-start-column="64" selection-end-line="554" selection-end-column="64" />
+            <state relative-caret-position="237">
+              <caret line="801" column="79" selection-start-line="801" selection-start-column="72" selection-end-line="801" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditSystem.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/CreditSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#13612#13621#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,11 +50,8 @@
       <file leaf-file-name="UtilsClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/UtilsClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="501">
+            <state relative-caret-position="1485">
               <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -56,8 +59,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+            <state relative-caret-position="300">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,11 +71,10 @@
       <file leaf-file-name="Decode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-158">
-              <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
+            <state>
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1676#1684#0" expanded="true" />
+                <element signature="e#1730#1738#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,10 +83,23 @@
       <file leaf-file-name="SecondDecode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
+            <state relative-caret-position="165">
+              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CreditClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/CreditClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="988">
+              <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4882#4890#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -101,36 +116,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>tota</find>
-      <find>system.exit</find>
-      <find>segmentBase</find>
-      <find>parseM</find>
-      <find>saveDir</find>
-      <find>downloadThin</find>
+      <find>hey you got me</find>
+      <find>hey normal</find>
+      <find>EL1</find>
+      <find>error</find>
+      <find>.mpd</find>
+      <find>song</find>
+      <find>yes</find>
+      <find>seg3</find>
+      <find>downloadF</find>
+      <find>Client.</find>
       <find>parseMpd</find>
-      <find>layerList</find>
-      <find>noOfLay</find>
-      <find>totalFileList</find>
-      <find>getList</find>
-      <find>mpdList</find>
-      <find>Collections.shuff</find>
-      <find>waiting finished</find>
-      <find>wai</find>
-      <find>check</find>
-      <find>sleep</find>
-      <find>I am reques</find>
-      <find>first</find>
-      <find>I totally</find>
-      <find>i to</find>
-      <find>disco</find>
+      <find>CreditCli</find>
+      <find>I got ff</find>
+      <find>denied</find>
+      <find>server Denied</find>
+      <find>File Dow</find>
+      <find>new acc</find>
+      <find>server de</find>
+      <find>CreditClie</find>
+      <find>firstByte</find>
+      <find>downloadth</find>
+      <find>myip</find>
       <find>current</find>
-      <find>is greater</find>
-      <find>greater</find>
-      <find>grea</find>
-      <find>Client is</find>
-      <find>I am co</find>
-      <find>newCli</find>
-      <find>e.print</find>
+      <find>er</find>
+      <find>server deni</find>
+      <find>I have got</find>
+      <find>Fileflag=1</find>
+      <find>Fileflag</find>
+      <find>in.read</find>
+      <find>in.close</find>
     </findStrings>
     <replaceStrings>
       <replace>8900</replace>
@@ -176,14 +191,16 @@
         <option value="$PROJECT_DIR$/src/main/conf.java" />
         <option value="$PROJECT_DIR$/src/main/Utils.java" />
         <option value="$PROJECT_DIR$/src/main/changeINClient.java" />
-        <option value="$PROJECT_DIR$/src/main/Change.java" />
         <option value="$PROJECT_DIR$/src/main/Player.java" />
         <option value="$PROJECT_DIR$/src/main/newClient.java" />
         <option value="$PROJECT_DIR$/src/main/UtilsClient.java" />
         <option value="$PROJECT_DIR$/src/main/SecondDecode.java" />
         <option value="$PROJECT_DIR$/src/main/Decode.java" />
-        <option value="$PROJECT_DIR$/src/main/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/Change.java" />
         <option value="$PROJECT_DIR$/src/main/VideoChange.java" />
+        <option value="$PROJECT_DIR$/src/main/Client.java" />
+        <option value="$PROJECT_DIR$/src/main/CreditClient.java" />
+        <option value="$PROJECT_DIR$/src/main/CreditSystem.java" />
       </list>
     </option>
   </component>
@@ -193,19 +210,17 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="35" />
+    <option name="y" value="24" />
     <option name="width" value="1346" />
-    <option name="height" value="688" />
+    <option name="height" value="660" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -250,10 +265,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../jars/jsoup-1.11.3.jar!/" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -275,9 +293,9 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="pupul" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="main.VideoChange" />
+      <option name="MAIN_CLASS_NAME" value="main.CreditSystem" />
       <module name="cnerg" />
-      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../Project/ 10.5.20.218" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/../../output/ 10.5.20.218" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
@@ -345,7 +363,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="0" y="-4" width="1600" height="904" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
@@ -360,7 +379,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.15625" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" sideWeight="0.5089514" side_tool="true" weight="0.30181542" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
       <window_info id="UI Designer" order="4" />
@@ -376,28 +395,28 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="1" weight="0.24962178" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.36055276" />
-      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" sideWeight="0.5089514" side_tool="true" weight="0.30181542" />
-      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32843137" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.32788944" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Capture Tool" order="6" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32788944" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
       <window_info id="Favorites" order="5" side_tool="true" />
@@ -416,23 +435,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/extra/ClientClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/working/ClientProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="116" column="25" lean-forward="true" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/working/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -565,9 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -575,16 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/extra/WithHttp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -676,8 +665,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/UtilsClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
+        <state relative-caret-position="1485">
           <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1730#1738#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/WithHttp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Change.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="240" column="48" selection-start-line="240" selection-start-column="48" selection-end-line="240" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -686,39 +706,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="53" column="22" lean-forward="true" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
-          <caret line="56" column="23" selection-start-line="56" selection-start-column="23" selection-end-line="56" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1676#1684#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Change.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="551" column="60" lean-forward="true" selection-start-line="551" selection-start-column="60" selection-end-line="551" selection-end-column="60" />
+        <state relative-caret-position="300">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -727,10 +716,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1288">
-          <caret line="554" column="64" selection-start-line="554" selection-start-column="64" selection-end-line="554" selection-end-column="64" />
+        <state relative-caret-position="237">
+          <caret line="801" column="79" selection-start-line="801" selection-start-column="72" selection-end-line="801" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CreditClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="988">
+          <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4882#4890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/CreditSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+          <folding>
+            <element signature="e#13612#13621#0" expanded="true" />
           </folding>
         </state>
       </provider>

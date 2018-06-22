@@ -38,8 +38,8 @@ public class Utils {
         Document doc = dBuilder.parse(inputFile);
         doc.getDocumentElement().normalize();
         String segmentBase = ((Element) doc.getElementsByTagName("Initialization").item(0)).getAttribute("sourceURL");
+        System.out.println(segmentBase);
         NodeList nodeList = doc.getElementsByTagName("Representation");
-
         int width = 0;
         int height = 0;
         int duration = 0;
@@ -57,7 +57,7 @@ public class Utils {
                     width = Integer.parseInt(element.getAttribute("width"));
                     height = Integer.parseInt(element.getAttribute("height"));
                     duration = Integer.parseInt(segElement.getAttribute("duration"));
-                    numberOfSegments = segElement.getElementsByTagName("SegmentURL").getLength();
+                    //numberOfSegments = segElement.getElementsByTagName("SegmentURL").getLength();
                     first = false;
                 }
 
@@ -65,13 +65,24 @@ public class Utils {
                 bwList.add(Double.parseDouble(element.getAttribute("bandwidth")));
                 List<String> tempSegUrls = new ArrayList<>();
                 NodeList urlNodes = segElement.getElementsByTagName("SegmentURL");
+                int i=0;
                 for (int jtr = 0; jtr < urlNodes.getLength(); jtr++) {
                     Node urlNode = urlNodes.item(jtr);
+
                     if (urlNode.getNodeType() == Node.ELEMENT_NODE) {
-                        tempSegUrls.add(((Element) urlNode).getAttribute("media"));
+                        String tt="seg"+i;
+                        String fileName = ((Element) urlNode).getAttribute("media");
+                        if(fileName.indexOf(tt)!=-1) {
+                            tempSegUrls.add(fileName);
+                            i++;
+                        }
                     }
                 }
+                System.out.println(tempSegUrls.size());
+                for(int u=0;u<tempSegUrls.size();u++)
+                    System.out.println(tempSegUrls.get(u));
                 segmentUrls.add(tempSegUrls);
+                numberOfSegments=tempSegUrls.size();
             }
         }
 
@@ -104,6 +115,10 @@ public class Utils {
                         videoList.add(listList.get(k).get(j));
                 }
             }
+        }
+        for(int j=0;j<videoList.size();j++)
+        {
+            System.out.println(videoList.get(j));
         }
         return videoList;
     }
