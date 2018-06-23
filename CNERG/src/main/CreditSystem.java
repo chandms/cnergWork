@@ -9,6 +9,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
@@ -74,17 +75,18 @@ public class CreditSystem {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                //System.out.println("Waiting for new name..............");
                 String fileName = null;
                 try {
                     fileName = in.readUTF();
                 } catch (IOException e) {
-                    //e.printStackTrace();
                 }
                 if (fileName == null)
                     continue;
                 int len = downloadList.size();
                 int fg = 0;
+                System.out.println("my list .....");
+                for(int j=0;j<len;j++)
+                    System.out.println(downloadList.get(j));
                 for (int j = 0; j < len; j++) {
                     if (downloadList.get(j).equals(fileName)) {
                         fg++;
@@ -127,16 +129,12 @@ public class CreditSystem {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                    /*try {
-                        socket.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }*/
                     System.out.println("File transfer complete " + fileName);
                     String credit="";
                     try {
                         credit=in.readUTF();
                         myCurrentCredit=myCurrentCredit+Double.parseDouble(credit);
+                        System.out.println("my current credit is = "+myCurrentCredit);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -278,7 +276,7 @@ public class CreditSystem {
                     width = Integer.parseInt(element.getAttribute("width"));
                     height = Integer.parseInt(element.getAttribute("height"));
                     duration = Integer.parseInt(segElement.getAttribute("duration"));
-                    numberOfSegments = segElement.getElementsByTagName("SegmentURL").getLength();
+                    //numberOfSegments = segElement.getElementsByTagName("SegmentURL").getLength();
                     first = false;
                 }
 
@@ -286,13 +284,21 @@ public class CreditSystem {
                 bwList.add(Double.parseDouble(element.getAttribute("bandwidth")));
                 List<String> tempSegUrls = new ArrayList<>();
                 NodeList urlNodes = segElement.getElementsByTagName("SegmentURL");
+                int i=0;
                 for (int jtr = 0; jtr < urlNodes.getLength(); jtr++) {
                     Node urlNode = urlNodes.item(jtr);
+
                     if (urlNode.getNodeType() == Node.ELEMENT_NODE) {
-                        tempSegUrls.add(((org.w3c.dom.Element) urlNode).getAttribute("media"));
+                        String tt="seg"+i;
+                        String fileName = ((org.w3c.dom.Element) urlNode).getAttribute("media");
+                        if(fileName.indexOf(tt)!=-1) {
+                            tempSegUrls.add(fileName);
+                            i++;
+                        }
                     }
                 }
                 segmentUrls.add(tempSegUrls);
+                numberOfSegments=tempSegUrls.size();
             }
         }
 
@@ -350,7 +356,6 @@ public class CreditSystem {
             {
                 noOfSegments= (int) entry.getValue();
             }
-            // System.out.println(entry.getKey()+": "+entry.getValue());
         }
         System.out.println(noOfLayers+" "+noOfSegments);
 
@@ -365,12 +370,12 @@ public class CreditSystem {
         String fileURL = "http://" + ip + ":8081/get?name=" + filename;
         String saveDir = Dest + downloadFolder + "/" + filename;
         try {
-            System.out.println("sadda haq "+filename);
             ArrayList<String> arr = new ArrayList<String >();
             arr=CreditClient.downloadFile(fileURL, saveDir,ip,filename);
             firstByte=arr.get(0);
             currentPermission=arr.get(1);
-            downloadList.add(filename);
+            if(currentPermission.equals("Yes"))
+                downloadList.add(filename);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -439,12 +444,6 @@ public class CreditSystem {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        /*try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }*/
 
     }
 
@@ -550,7 +549,6 @@ public class CreditSystem {
 
 
         int pos=fileName.indexOf("seg");
-        System.out.println("hey pos "+pos);
         pos=pos+3;
 
         String segNo="";
@@ -573,15 +571,16 @@ public class CreditSystem {
         int ii = 9000;
         Socket socket = null;
 
-        int f=0;
+        int flagSock=0;
         try {
+            System.out.println("I am in newcli and "+"my ipaddress = "+ipAddress+" and port = "+myPort);
             socket = new Socket(ipAddress, Integer.parseInt(myPort));
-            f++;
+            flagSock++;
         } catch (IOException e) {
             System.out.println("Socket bondho hoe geche ");
             //e.printStackTrace();
         }
-        if(f!=0) {
+        if(flagSock!=0) {
             DataOutputStream out = null;
             try {
                 out = new DataOutputStream(socket.getOutputStream());
@@ -834,6 +833,7 @@ public class CreditSystem {
                                         e.printStackTrace();
                                     }
                                     if (FileFlag == 1) {
+                                        downloadList.add(fileName);
                                         fulltransfer = new String(String.valueOf(System.currentTimeMillis()));
                                         break;
                                     }

@@ -78,9 +78,6 @@ public class Utils {
                         }
                     }
                 }
-                System.out.println(tempSegUrls.size());
-                for(int u=0;u<tempSegUrls.size();u++)
-                    System.out.println(tempSegUrls.get(u));
                 segmentUrls.add(tempSegUrls);
                 numberOfSegments=tempSegUrls.size();
             }

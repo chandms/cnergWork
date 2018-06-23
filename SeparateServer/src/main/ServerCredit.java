@@ -109,9 +109,7 @@ public class ServerCredit {
 
             InputStream is = httpExchange.getRequestBody();
             String x= IOUtils.toString(is, "UTF-8");
-            System.out.println(x+"!!!!");
             int pos=x.indexOf("seg");
-            System.out.println("hey pos "+pos);
             pos=pos+3;
 
             String segNo="";
@@ -148,6 +146,10 @@ public class ServerCredit {
                 else
                     creditMap.put(seg,creditMap.get(seg)+3);
             }
+            System.out.println("Server's credit:  ");
+
+            for(int j=0;j<creditMap.size();j++)
+                System.out.println("segment "+j +" = "+creditMap.get(j));
 
             httpExchange.sendResponseHeaders(200,resp.length());
             OutputStream os = httpExchange.getResponseBody();
@@ -168,7 +170,6 @@ public class ServerCredit {
         @Override
         public void handle(HttpExchange httpExchange) throws IOException {
             ArrayList <String > mpdList = new ArrayList<String>();
-            System.out.println("I am accesed");
 
             try {
                 mpdList=Utils.getVideoUrls(Destination+mpdFileName);
@@ -176,11 +177,6 @@ public class ServerCredit {
                 e.printStackTrace();
             } catch (ParserConfigurationException e) {
                 e.printStackTrace();
-            }
-            System.out.println("size is ="+mpdList.size());
-            for(int j=0;j<mpdList.size();j++)
-            {
-                System.out.println(mpdList.get(j));
             }
             String res="";
             for(int j=0;j<mpdList.size();j++) {

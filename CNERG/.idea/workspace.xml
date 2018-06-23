@@ -20,7 +20,7 @@
       <file leaf-file-name="Change.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Change.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
+            <state relative-caret-position="3330">
               <caret line="240" column="48" selection-start-line="240" selection-start-column="48" selection-end-line="240" selection-end-column="48" />
             </state>
           </provider>
@@ -29,7 +29,7 @@
       <file leaf-file-name="VideoChange.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="11625">
               <caret line="801" column="79" selection-start-line="801" selection-start-column="72" selection-end-line="801" selection-end-column="79" />
             </state>
           </provider>
@@ -38,20 +38,8 @@
       <file leaf-file-name="CreditSystem.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/CreditSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-              <folding>
-                <element signature="e#13612#13621#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UtilsClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/UtilsClient.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="120" column="9" selection-start-line="120" selection-start-column="9" selection-end-line="120" selection-end-column="9" />
+            <state relative-caret-position="137">
+              <caret line="835" column="56" selection-start-line="835" selection-start-column="40" selection-end-line="835" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -59,7 +47,7 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="225">
               <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,8 +71,8 @@
       <file leaf-file-name="SecondDecode.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="132">
+              <caret line="30" column="107" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -95,11 +83,10 @@
       <file leaf-file-name="CreditClient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/CreditClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="988">
+            <state relative-caret-position="688">
               <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4882#4890#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,17 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hey you got me</find>
-      <find>hey normal</find>
-      <find>EL1</find>
-      <find>error</find>
-      <find>.mpd</find>
-      <find>song</find>
-      <find>yes</find>
-      <find>seg3</find>
-      <find>downloadF</find>
-      <find>Client.</find>
-      <find>parseMpd</find>
       <find>CreditCli</find>
       <find>I got ff</find>
       <find>denied</find>
@@ -146,6 +122,17 @@
       <find>Fileflag</find>
       <find>in.read</find>
       <find>in.close</find>
+      <find>mycurre</find>
+      <find>I got o</find>
+      <find>seg1-L1</find>
+      <find>seg0-L1</find>
+      <find>socket</find>
+      <find>my list</find>
+      <find>my cre</find>
+      <find>my list</find>
+      <find>UtilsCl</find>
+      <find>Client.</find>
+      <find>downloadList.add</find>
     </findStrings>
     <replaceStrings>
       <replace>8900</replace>
@@ -221,6 +208,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,51 +217,16 @@
               <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
               <item name="CNERG" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CNERG" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CNERG" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CNERG" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-              <item name="cnerg_jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CNERG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CNERG" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CNERG" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -364,7 +318,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="904" extended-state="7" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="2" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
@@ -373,13 +326,13 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.32788944" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32980332" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.36055276" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.32947233" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49853587" visible="true" weight="0.35963777" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.15625" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.13449164" />
       <window_info id="Structure" order="1" sideWeight="0.5089514" side_tool="true" weight="0.30181542" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
       <window_info id="UI Designer" order="4" />
@@ -399,12 +352,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853587" weight="0.36055276" />
       <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4910486" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" sideWeight="0.5089514" side_tool="true" weight="0.30181542" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.24962178" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -414,7 +367,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5014641" side_tool="true" weight="0.32788944" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32788944" />
@@ -435,13 +388,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/working/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -670,6 +616,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/extra/WithHttp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/Change.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3330">
+          <caret line="240" column="48" selection-start-line="240" selection-start-column="48" selection-end-line="240" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11625">
+          <caret line="801" column="79" selection-start-line="801" selection-start-column="72" selection-end-line="801" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Decode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -680,24 +654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/extra/WithHttp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="247" column="22" selection-start-line="247" selection-start-column="22" selection-end-line="247" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/Change.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="240" column="48" selection-start-line="240" selection-start-column="48" selection-end-line="240" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/SecondDecode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="132">
+          <caret line="30" column="107" lean-forward="true" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -706,7 +666,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
+        <state relative-caret-position="225">
           <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -714,31 +674,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/VideoChange.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="801" column="79" selection-start-line="801" selection-start-column="72" selection-end-line="801" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/CreditClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
+        <state relative-caret-position="688">
           <caret line="81" column="35" selection-start-line="81" selection-start-column="35" selection-end-line="81" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4882#4890#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/CreditSystem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-          <folding>
-            <element signature="e#13612#13621#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="137">
+          <caret line="835" column="56" selection-start-line="835" selection-start-column="40" selection-end-line="835" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -749,8 +698,8 @@
         <settings>
           <artifact-editor>
             <show-content>
-              <type id="library" />
               <type id="artifact" />
+              <type id="library" />
             </show-content>
           </artifact-editor>
           <last-edited>cnerg:jar</last-edited>
